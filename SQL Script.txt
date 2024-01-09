@@ -1,0 +1,20 @@
+-- Table: public.event
+
+-- DROP TABLE IF EXISTS public.event;
+
+CREATE TABLE IF NOT EXISTS public.event
+(
+    id bigint NOT NULL DEFAULT nextval('event_id_seq'::regclass),
+    description character varying(255) COLLATE pg_catalog."default",
+    endtime timestamp(6) without time zone,
+    location character varying(255) COLLATE pg_catalog."default",
+    reminder character varying(255) COLLATE pg_catalog."default",
+    startime timestamp(6) without time zone,
+    title character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT event_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.event
+    OWNER to postgres;
